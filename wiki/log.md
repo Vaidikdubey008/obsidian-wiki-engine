@@ -2,7 +2,7 @@
 type: moc
 title: Change log
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-08
 review_by: 2027-09-01
 status: stable
 confidence: high
@@ -14,6 +14,43 @@ tags: [log]
 # Change log
 
 Append only. Newest first. One entry per ingest or lint run.
+
+## 2026-09-08 — Ingest of Services Knowledge Base v1.0 (1 source)
+
+**Source ingested:** 1 new file in `raw/`
+
+| File | Hash (prefix) |
+|---|---|
+| minghwee-services-knowledge-base.md | cff3a449 |
+
+Hash checked against all existing source pages before ingest. No duplicate found. This is the MingHwee Services Knowledge Base v1.0 (Growwstacks) — the operational service-delivery document covering the seven core FDW/MDW placement services. In scope per AGENTS.md §0 (service delivery for the Ming Hwee project).
+
+**Delivered across two pull requests:**
+- **PR #1** merged the raw file (`raw/minghwee-services-knowledge-base.md`) only — the wiki pages were not included in that merge.
+- **PR #2** (this entry) adds the ten wiki pages plus the index, log and MOC updates, completing the ingest so the raw source is no longer orphaned.
+
+**Pages created:** 10
+- 1 source summary: services-knowledge-base-source
+- 8 concept pages: New-Hiring, Direct-Hiring, Work-Permit-Renewal, Passport-Renewal, Home-Leave, Replacement, Helper-Transfer, Forms-and-documents-register
+- 1 analysis page: services-at-a-glance
+
+**Pages updated:** index.md (routing rows for the seven services + forms register; source-documents row; health counts; open-conflicts table; source-summary list), concepts-moc (new "Service delivery" section), analyses-moc (services-at-a-glance + a suggested fee-verification analysis).
+
+**Conflicts opened:** 1
+1. SIP registration window — 3 working days of arrival (Module 27 / helper-rights corpus) vs a 7-day window / "required window" (Services KB, Direct Hiring and New Hiring) — on [[New-Hiring]]. Left open; needs verification against the MOM portal.
+
+**Conflicts resolved:** 0
+
+**Key findings:**
+- The Services KB is a service-delivery layer distinct from the chatbot guardrail modules already in the wiki — it describes the human/agency workflow the bot's tickets hand off into.
+- Fees are stated for only four services (Work Permit Renewal $695; Passport Renewal PH/Indo $450; Home Leave PH $400 / Indo $250). New Hiring, Direct Hiring, Replacement and Transfer are quoted as "package"/"fee" with no figure — flagged as an open question and a suggested next analysis.
+- All stated fees, the $35 MOM submission fee, and MOM timelines are volatile by default (AGENTS.md §0.2) and were recorded with source and date, marked as requiring verification against the live MOM portal before quoting.
+- Passport-related handling (PH original passport for renewal / home leave) was cross-linked to [[Passport-confiscation-protocol]] so a legitimate embassy hold is not confused with confiscation.
+
+**Notes on method:**
+- The `.docx` was extracted to markdown and a clean canonical raw file authored for `raw/`. Nothing else under `raw/` was modified.
+- Per AGENTS.md §7 the work was done on ingest branches (`ingest/services-knowledge-base`, then `ingest/services-kb-wiki-pages`) for human review, not committed directly to `main` by the ingest run.
+- No credentials, keys, tokens or personal data were written.
 
 ## 2026-09-01 — Initial ingest of Ming Hwee Assistant project (11 sources)
 
