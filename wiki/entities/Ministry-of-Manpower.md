@@ -2,12 +2,12 @@
 type: entity
 title: Ministry of Manpower
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-08
 review_by: 2026-12-01
 status: contested
 confidence: high
 sensitivity: public
-sources: ["raw/20250819 - MOM-EA-licence-conditions (1).docx", "raw/20250819 - MOM guidelines-for-eas-placing-fdws (1).docx", "raw/comprehensive-hr-agency-knowledge-base (1).docx", raw/START-HERE-VENDOR-BRIEF.md, raw/01-chatbot-identity-guardrails.md]
+sources: ["raw/20250819 - MOM-EA-licence-conditions (1).docx", "raw/20250819 - MOM guidelines-for-eas-placing-fdws (1).docx", "raw/comprehensive-hr-agency-knowledge-base (1).docx", raw/START-HERE-VENDOR-BRIEF.md, raw/01-chatbot-identity-guardrails.md, raw/minghwee-services-knowledge-base-v1.md]
 tags: [regulator, singapore, mom, primary-source]
 ---
 
@@ -39,13 +39,24 @@ These figures appear in the corpus but are exactly the class of value [[Chatbot-
 |---|---|---|
 | Monthly levy, first MDW | SGD 300 | (src: raw/comprehensive-hr-agency-knowledge-base (1).docx §6.2) — labelled "2024 Rates" in a Sep 2025 document |
 | Monthly levy, concessionary | SGD 60 | (src: raw/comprehensive-hr-agency-knowledge-base (1).docx §6.2) |
-| Security bond | SGD 5,000 per non-Malaysian MDW | (src: raw/comprehensive-hr-agency-knowledge-base (1).docx §6.1) |
-| Work permit application fee | SGD 35 | (src: raw/comprehensive-hr-agency-knowledge-base (1).docx §6.1) |
-| Medical insurance minimum | SGD 60,000 since 1 July 2023 | (src: raw/START-HERE-VENDOR-BRIEF.md §5, §8) — the spec's own example said 15,000 |
+| Security bond | SGD 5,000 per non-Malaysian MDW | (src: raw/comprehensive-hr-agency-knowledge-base (1).docx §6.1; corroborated raw/minghwee-services-knowledge-base-v1.md §Services at a Glance · 2026-09-08) |
+| Work permit application fee | SGD 35 | (src: raw/comprehensive-hr-agency-knowledge-base (1).docx §6.1; corroborated raw/minghwee-services-knowledge-base-v1.md §Services at a Glance · 2026-09-08) |
+| Medical insurance minimum | SGD 60,000 since 1 July 2023 | (src: raw/START-HERE-VENDOR-BRIEF.md §5, §8) — the spec's own example said 15,000; the services KB also says 15,000 (see conflict below) |
+| Personal accident insurance minimum | SGD 60,000/yr | (src: raw/minghwee-services-knowledge-base-v1.md §Services at a Glance · 2026-09-08) |
 | Insurance co-payment | 25% above SGD 15,000 | (src: raw/START-HERE-VENDOR-BRIEF.md §8) |
 | Levy payment due | By the 14th monthly, 1.5%/month late penalty | (src: raw/comprehensive-hr-agency-knowledge-base (1).docx §6.2) |
+| Home-leave levy waiver | Automatic for the leave period | (src: raw/minghwee-services-knowledge-base-v1.md §5. Home Leave · 2026-09-08) |
 
 The levy concession is worth SGD 240/month, which is why misapplying it is a launch blocker. (src: raw/START-HERE-VENDOR-BRIEF.md §4 · 2026-09-01)
+
+The services knowledge base independently states the security bond and the $35 MOM submission fee, corroborating the figures above. It is an operational playbook, not a regulatory source, so it does not settle the volatile values — see [[Service-catalogue]] and the insurance conflict below. (src: raw/minghwee-services-knowledge-base-v1.md §Services at a Glance · 2026-09-08)
+
+> [!conflict] OPEN — medical insurance annual minimum
+> - **Claim A:** Medical insurance minimum is **SGD 60,000**, in force since 1 July 2023; the vendor brief flags that the spec's own example wrongly said 15,000. (src: raw/START-HERE-VENDOR-BRIEF.md §5, §8 · 2026-09-01)
+> - **Claim B:** Medical insurance minimum is **$15,000/yr**, stated in the common building blocks and repeated in the New Hiring and Direct Hiring mandatory lists. (src: raw/minghwee-services-knowledge-base-v1.md §Services at a Glance; §1. New Hiring; §2. Direct Hiring · 2026-09-08)
+> - **Assessment:** The brief is the newer, regulation-facing document and explicitly identifies 15,000 as the stale value that must be corrected to 60,000. The services KB repeats 15,000 throughout, so it appears to carry the same stale figure the brief warns about — the "$60k PA / $15k medical" split it uses is a known pre-2023 shape. This is exactly the [[Dynamic-data-architecture]] failure mode: a confidently stated figure that has moved.
+> - **Next step:** Treat SGD 60,000 as the likely-current medical minimum, verify against MOM, serve from [[Ming-Hwee-Portal-API]], and correct the services KB. The bot must not quote 15,000.
+> - **Status:** open
 
 > [!conflict] OPEN — elderly levy concession age threshold
 > - **Claim A:** The elderly person must be **67 years or older**, stated as settled fact alongside the child-under-16 and disability criteria. (src: raw/comprehensive-hr-agency-knowledge-base (1).docx §6.2 · 2026-09-01)
@@ -65,6 +76,7 @@ The levy concession is worth SGD 240/month, which is why misapplying it is a lau
 - Wrong regulatory information is not merely a service failure: an employer who follows it can breach Work Permit conditions and face penalties or a hiring ban. (src: raw/START-HERE-VENDOR-BRIEF.md §1 · 2026-09-01)
 - MOM's own guidelines name "wrong advice on MOM's regulations" as the example of prohibited misleading of clients — so a hallucinating chatbot is a licence-conditions issue. (src: raw/20250819 - MOM guidelines-for-eas-placing-fdws (1).docx §General duty to clients · 2026-09-01)
 - The chatbot must never discourage a helper who has contacted MOM, or suggest it affects her job, permit or placement. (src: raw/01-chatbot-identity-guardrails.md §1.5 · 2026-09-01)
+- MOM touch-points recur across every service: the $35 FDW e-Service submission, IPA before WP issuance, the ~8-week Renewal Notification, the Security Bond Transmission form for overseas hires, and the automatic home-leave levy waiver. See [[Service-catalogue]]. (src: raw/minghwee-services-knowledge-base-v1.md §Services at a Glance; §3. Work Permit Renewal · 2026-09-08)
 
 ## Related
-[[Ming-Hwee-Agency]] · [[EA-licence-compliance]] · [[Dynamic-data-architecture]] · [[Ming-Hwee-Portal-API]] · [[Employer-eligibility-screening]] · [[Helper-rights]] · [[Safety-allowlist]]
+[[Ming-Hwee-Agency]] · [[EA-licence-compliance]] · [[Dynamic-data-architecture]] · [[Ming-Hwee-Portal-API]] · [[Employer-eligibility-screening]] · [[Helper-rights]] · [[Safety-allowlist]] · [[Service-catalogue]] · [[Forms-and-documents-register]]

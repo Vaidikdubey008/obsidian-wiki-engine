@@ -2,7 +2,7 @@
 type: moc
 title: Change log
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-08
 review_by: 2027-09-01
 status: stable
 confidence: high
@@ -14,6 +14,45 @@ tags: [log]
 # Change log
 
 Append only. Newest first. One entry per ingest or lint run.
+
+## 2026-09-08 — Ingest of MingHwee Services Knowledge Base v1.0 (1 source)
+
+**Branch:** `ingest/minghwee-services-kb` — created for human review, not merged.
+
+**Source ingested:** 1
+| File | Hash (prefix) |
+|---|---|
+| minghwee-services-knowledge-base-v1.md | 9ec2b3f6 |
+
+The source arrived as `MingHwee_Services_Knowledge_Base.docx` and was committed to `raw/` as a faithful Markdown extraction (the GitHub API path in use commits text, not binary). The two-column document-checklist tables in the docx were compacted to single Markdown rows (semicolon-separated) for Obsidian rendering; wording preserved. Hash recorded is of the committed `.md`. No pre-existing file in `raw/` was modified. Duplicate check: the hash does not match any existing source page — not a duplicate.
+
+**Scope decision:** In scope. This is the operational service playbook for [[Ming-Hwee-Agency]] — the same client and project as the existing corpus — and complements the chatbot documents by describing the human FCC/CC workflow the ticket-capture flows feed.
+
+**Pages created:** 9
+- 1 source summary: [[minghwee-services-kb-source]]
+- 8 concepts: [[Service-catalogue]], [[New-Hiring]], [[Direct-Hiring]], [[Work-Permit-Renewal]], [[Passport-Renewal]], [[Home-Leave]], [[Replacement]], [[Helper-Transfer]], plus [[Forms-and-documents-register]]
+  (Service-catalogue is the routing hub; Forms-and-documents-register carries Appendix A + the MOM retention list.)
+
+**Pages updated:** 4
+- [[Ministry-of-Manpower]] — corroborated the $5,000 bond and $35 submission fee; added PA-insurance minimum, the automatic home-leave levy waiver, and a services cross-reference; opened the insurance-minimum conflict.
+- [[Ming-Hwee-Agency]] — added a "Services delivered" section linking all seven service pages and the forms register.
+- [[Employer-eligibility-screening]] — noted that [[Helper-Transfer]] re-runs eligibility against the new employer; added links.
+- [[concepts-moc]] — added a "Services delivery" section.
+- (plus [[index.md]] routing, source table, health and conflicts; not counted as a content page.)
+
+**Conflicts opened:** 1
+1. Medical insurance annual minimum — the services KB states $15,000/yr in its common building blocks and in the New Hiring and Direct Hiring mandatory lists, conflicting with the vendor brief's SGD 60,000 (in force since 1 July 2023). The brief explicitly flags 15,000 as the stale value to correct, so the services KB appears to carry that same stale figure. On [[Ministry-of-Manpower]]. This is the [[Dynamic-data-architecture]] failure mode in a second document.
+
+**Conflicts resolved:** 0
+
+**Key findings / notes:**
+- The document carries a hard classification rule: any "transfer" / "change employer" / existing-WP language means [[Helper-Transfer]], never [[New-Hiring]]. Recorded prominently because misclassification sends an in-country helper through overseas recruitment.
+- The seven service fees ($695 renewal, $450 passport, $400/$250 home leave, plus package/replacement/transfer fees) are Ming Hwee **service** fees, not government charges, and it is unstated whether they include government/embassy costs and insurance. Flagged as open questions, not carried as settled.
+- SIP timing is stated inconsistently across the corpus — "within 3 working days of arrival" elsewhere vs a "7-day window" in this document's Direct Hiring flow. Raised as an open question on [[Service-catalogue]]; not yet escalated to a formal conflict block pending confirmation of the MOM rule.
+- Only the Philippines and Indonesia are documented for Passport Renewal and Home Leave; Myanmar is silent. Recorded as open questions rather than assumed equivalent.
+- No credentials, keys, tokens or personal data were written. Portal/embassy URLs quoted (eop.com.sg, onlineservices.dmw.gov.ph, fdw.indonesianlabour.sg) are public service endpoints named in the source.
+
+**Self-check:** every new claim carries a source reference with the 2026-09-08 retrieval date; frontmatter valid on all touched pages; `updated`/`review_by` set (services pages +180d, MOM/eligibility kept at existing review dates); no page left without an incoming link (all eight services link from [[Service-catalogue]], which links from [[index.md]], [[Ming-Hwee-Agency]] and [[concepts-moc]]); the insurance contradiction raised as a conflict block, not resolved unilaterally; `index.md` and `log.md` updated; nothing pre-existing under `raw/` modified.
 
 ## 2026-09-01 — Initial ingest of Ming Hwee Assistant project (11 sources)
 
