@@ -2,12 +2,12 @@
 type: concept
 title: Employer Eligibility Screening
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-08
 review_by: 2026-12-01
 status: contested
 confidence: medium
 sensitivity: client-confidential
-sources: ["raw/MING HWEE AGENCY - chatbot requriments and clarification (1).docx", "raw/comprehensive-hr-agency-knowledge-base (1).docx", "raw/Ming_Hwee_OS_Conversational_AI_Integration_Chatbot_Vendor_Review_Pack_v13_0 (1).docx"]
+sources: ["raw/MING HWEE AGENCY - chatbot requriments and clarification (1).docx", "raw/comprehensive-hr-agency-knowledge-base (1).docx", "raw/Ming_Hwee_OS_Conversational_AI_Integration_Chatbot_Vendor_Review_Pack_v13_0 (1).docx", raw/minghwee-services-knowledge-base-v1.md]
 tags: [eligibility, mom, core-logic, workflows]
 ---
 
@@ -18,6 +18,8 @@ The seven-criteria MOM check that determines whether a prospective employer may 
 
 ## Why it matters here
 Every downstream flow depends on it. An ineligible employer who is nurtured, matched and booked has consumed consultant time and will fail at MOM submission. Eligibility also carries 40% of the lead score — see [[Lead-qualification]].
+
+It is not only a new-hire gate. A [[Helper-Transfer]] runs a fresh eligibility check against the **new** employer from scratch — a transfer is not exempt because the helper is already in Singapore. The services knowledge base lists "new employer eligibility" as a mandatory step in the transfer flow. (src: raw/minghwee-services-knowledge-base-v1.md §7. Helper Transfer · 2026-09-08)
 
 ## The seven criteria
 (src: raw/MING HWEE AGENCY - chatbot requriments and clarification (1).docx §4 · 2026-09-01)
@@ -70,9 +72,10 @@ Sensitive intake documents — income documents, payslips, NRIC — must **not**
 - The seven criteria are named without thresholds anywhere in this corpus. A build cannot proceed from the criteria list alone.
 - Bankruptcy and mental capacity are not self-declarable in any reliable way, and no document explains how they are verified.
 - The employer eligibility figures in the knowledge base carry a Sep 2025 date with 2024-labelled neighbours — treat every number on this page as needing portal verification before use.
+- A transfer re-runs eligibility on the new employer; do not carry the previous employer's status forward. See [[Helper-Transfer]].
 
 ## Related
-[[Workflow-inventory]] · [[Lead-qualification]] · [[Ming-Hwee-Portal-API]] · [[Dynamic-data-architecture]] · [[Sensitive-data-boundary]] · [[n8n]] · [[Ministry-of-Manpower]] · [[Candidate-employer-matching]]
+[[Workflow-inventory]] · [[Lead-qualification]] · [[Ming-Hwee-Portal-API]] · [[Dynamic-data-architecture]] · [[Sensitive-data-boundary]] · [[n8n]] · [[Ministry-of-Manpower]] · [[Candidate-employer-matching]] · [[Helper-Transfer]] · [[Service-catalogue]]
 
 ## Open questions
 - What are the actual thresholds for each of the seven criteria?

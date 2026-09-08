@@ -2,12 +2,12 @@
 type: entity
 title: Ming Hwee Agency
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-08
 review_by: 2026-12-01
 status: contested
 confidence: high
 sensitivity: client-confidential
-sources: [raw/START-HERE-VENDOR-BRIEF.md, raw/01-chatbot-identity-guardrails.md, raw/48-version-control.md, "raw/Ming_Hwee_OS_Conversational_AI_Integration_Chatbot_Vendor_Review_Pack_v13_0 (1).docx"]
+sources: [raw/START-HERE-VENDOR-BRIEF.md, raw/01-chatbot-identity-guardrails.md, raw/48-version-control.md, "raw/Ming_Hwee_OS_Conversational_AI_Integration_Chatbot_Vendor_Review_Pack_v13_0 (1).docx", raw/minghwee-services-knowledge-base-v1.md]
 tags: [client, singapore, employment-agency, mdw]
 ---
 
@@ -27,6 +27,11 @@ A 24/7 web chatbot for the Ming Hwee website — the "Ming Hwee Assistant" — s
 | Helpers | Rights information, emotional support, complaint intake, crisis routing | Safeguarding failure. "A helper in distress is the highest-stakes user of this system, and she is the user least able to complain if you get it wrong." (src: raw/START-HERE-VENDOR-BRIEF.md §1) |
 
 Later strategy repositions the chatbot as one conversational layer inside [[Ming-Hwee-OS]] rather than a standalone system. (src: raw/Ming_Hwee_OS_Conversational_AI_Integration_Chatbot_Vendor_Review_Pack_v13_0 (1).docx §1 · 2026-09-01)
+
+## Services delivered
+The agency runs seven core FDW services, documented operationally in the services knowledge base and mapped in [[Service-catalogue]]: [[New-Hiring]] (the full end-to-end recruitment "deep flow"), [[Direct-Hiring]], [[Work-Permit-Renewal]], [[Passport-Renewal]], [[Home-Leave]], [[Replacement]] and [[Helper-Transfer]]. New Hiring is the deep flow; the other six are ticket-capture flows routed to sales/admin. Every form used across them is catalogued in [[Forms-and-documents-register]]. (src: raw/minghwee-services-knowledge-base-v1.md §Services at a Glance; §Two ways a service runs · 2026-09-08)
+
+Delivery is run by two staff roles the chatbot feeds: the Family Care Consultant (FCC, sales/matching/advisory) and the Care Coordinator (CC, documents/MOM/logistics), alongside an overseas partner agency (OP) in the source country. (src: raw/minghwee-services-knowledge-base-v1.md §Key parties · 2026-09-08)
 
 ## Operating facts
 - Office hours are Monday–Friday 9:30–18:30 and Saturday 10:30–16:30. The chatbot is available 24/7 but human routing is bounded by these hours. (src: raw/START-HERE-VENDOR-BRIEF.md §4 · 2026-09-01)
@@ -53,4 +58,4 @@ The KB has never been reviewed by a Singapore employment lawyer, a migrant-worke
 > - **Status:** open
 
 ## Related
-[[Ming-Hwee-OS]] · [[Ministry-of-Manpower]] · [[Ming-Hwee-Portal-API]] · [[Chatbot-guardrails]] · [[Agency-first-support]] · [[EA-licence-compliance]] · [[launch-blockers]]
+[[Ming-Hwee-OS]] · [[Ministry-of-Manpower]] · [[Ming-Hwee-Portal-API]] · [[Chatbot-guardrails]] · [[Agency-first-support]] · [[EA-licence-compliance]] · [[launch-blockers]] · [[Service-catalogue]] · [[Forms-and-documents-register]]
