@@ -2,7 +2,7 @@
 type: moc
 title: Concepts — Map of Content
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-08
 review_by: 2026-12-01
 status: stable
 confidence: high
@@ -38,6 +38,17 @@ Read this to decide which pages to open. One line per page: what question it ans
 - [[Candidate-employer-matching]] — answers: who decides which helper profiles reach an employer, and the fairness rules
 - [[Human-handoff]] — answers: what triggers escalation to a person, and how fast that person must arrive
 - [[Workflow-inventory]] — answers: the sixteen backend workflows, their status, and which are unowned
+
+## Services delivery
+- [[Service-catalogue]] — answers: the seven core services, how to classify an enquiry, and deep-flow vs ticket-capture
+- [[New-Hiring]] — answers: the full five-phase end-to-end recruitment flow (the deep flow)
+- [[Direct-Hiring]] — answers: processing a client's own candidate, and how it differs from New Hiring
+- [[Work-Permit-Renewal]] — answers: renewing a WP before expiry, and the two MOM clocks that box it
+- [[Passport-Renewal]] — answers: renewing the helper's home passport via the embassy, PH vs Indonesia
+- [[Home-Leave]] — answers: sending a helper home between contracts, and the automatic levy waiver
+- [[Replacement]] — answers: swapping a helper for a different one, and the forms that distinguish it
+- [[Helper-Transfer]] — answers: moving an existing helper between employers, and the classification rule
+- [[Forms-and-documents-register]] — answers: who signs each form, where it is used, and the MOM retention list
 
 ## Regulatory
 - [[EA-licence-compliance]] — answers: the obligations that turn a chatbot error into a licensing risk
