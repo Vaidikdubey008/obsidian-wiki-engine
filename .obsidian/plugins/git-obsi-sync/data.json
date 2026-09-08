@@ -1,0 +1,14 @@
+{
+  "githubToken": "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",
+  "githubUsername": "Vaidikdubey008",
+  "repoName": "obsidian-wiki-engine",
+  "autoSync": false,
+  "syncIntervalMs": 3000,
+  "excludePatterns": [
+    ".obsidian/workspace",
+    ".obsidian/workspace.json",
+    ".obsidian/plugins/*/data.json"
+  ],
+  "lastSyncTime": 1788874618815,
+  "commitMessageTemplate": "sync: {{datetime}}"
+}
