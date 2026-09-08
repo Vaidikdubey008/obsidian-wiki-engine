@@ -2,7 +2,7 @@
 type: moc
 title: Index
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-08
 review_by: 2026-12-01
 status: stable
 confidence: high
@@ -17,7 +17,7 @@ tags: [moc]
 Pick the smallest set of pages that answers the question. Maximum 7.
 
 ## Scope
-This wiki covers: the **Ming Hwee Assistant** chatbot project — a 24/7 web chatbot for a Singapore employment agency serving both employers hiring a migrant domestic worker (MDW) and the helpers themselves. It covers the vendor proposal and its two revisions, the chatbot's guardrails and safeguarding protocols, helper rights content, and the MOM regulatory framework the system must comply with.
+This wiki covers: the **Ming Hwee Assistant** chatbot project — a 24/7 web chatbot for a Singapore employment agency serving both employers hiring a migrant domestic worker (MDW) and the helpers themselves. It covers the vendor proposal and its two revisions, the chatbot's guardrails and safeguarding protocols, helper rights content, the seven core placement services Ming Hwee delivers, and the MOM regulatory framework the system must comply with.
 
 It deliberately does NOT cover: other GrowwStacks client projects; general chatbot or LLM engineering practice; Singapore immigration or employment law beyond what the ingested MOM documents state.
 
@@ -55,6 +55,15 @@ It deliberately does NOT cover: other GrowwStacks client projects; general chatb
 | What blocks launch and who owns each item | [[launch-blockers]] |
 | What changed between vendor documents; what is current | [[vendor-scope-realignment]] |
 | What documentation is missing | [[documentation-completeness-check]] |
+| Which of the seven services an enquiry is, time and cost | [[services-at-a-glance]] |
+| First-time overseas hire, end-to-end recruitment | [[New-Hiring]] |
+| Employer's own candidate, admin-only processing | [[Direct-Hiring]] |
+| Renewing an existing helper's Work Permit | [[Work-Permit-Renewal]] |
+| Renewing a helper's home-country passport | [[Passport-Renewal]] |
+| Sending a helper home between contracts | [[Home-Leave]] |
+| Swapping the current helper for a different one | [[Replacement]] |
+| Helper changing employer while staying in SG | [[Helper-Transfer]] |
+| Which form is used where and who signs it | [[Forms-and-documents-register]] |
 
 ## Source documents
 | Source | File | Hash (prefix) |
@@ -70,19 +79,20 @@ It deliberately does NOT cover: other GrowwStacks client projects; general chatb
 | Ming Hwee OS Vendor Review Pack v13.0 | raw/Ming_Hwee_OS_Conversational_AI_Integration_Chatbot_Vendor_Review_Pack_v13_0 (1).docx | 52b31868 |
 | MOM — Guidelines for EAs placing FDWs | raw/20250819 - MOM guidelines-for-eas-placing-fdws (1).docx | 2462d155 |
 | MOM — EA Licence Conditions | raw/20250819 - MOM-EA-licence-conditions (1).docx | 0027f77c |
+| Services Knowledge Base (v1.0) | raw/minghwee-services-knowledge-base.md | cff3a449 |
 
 **Excluded from ingest:** `Kirti_Lapidary_Technical_Feasibility_Assessment.docx` (hash 5ffd96d4) — an unrelated client project, present in `raw/` at the time of ingest and deliberately skipped. It has since been removed from `raw/` by someone other than the ingest run. See [[documentation-completeness-check]] and `log.md`.
 
 ## Health
 | Metric | Value | As of |
 |---|---|---|
-| Wiki pages | 48 | 2026-09-01 |
-| Sources ingested | 11 (all files now in raw/) | 2026-09-01 |
-| Open conflicts | 9 | 2026-09-01 |
-| Resolved conflicts | 1 | 2026-09-01 |
-| Orphan pages | 0 | 2026-09-01 |
-| Dead links | 0 | 2026-09-01 |
-| Facts past review_by | 0 | 2026-09-01 |
+| Wiki pages | 58 | 2026-09-08 |
+| Sources ingested | 12 | 2026-09-08 |
+| Open conflicts | 10 | 2026-09-08 |
+| Resolved conflicts | 1 | 2026-09-08 |
+| Orphan pages | 0 | 2026-09-08 |
+| Dead links | 0 | 2026-09-08 |
+| Facts past review_by | 0 | 2026-09-08 |
 
 ## Open conflicts at a glance
 | Conflict | Page | Why it matters |
@@ -96,6 +106,7 @@ It deliberately does NOT cover: other GrowwStacks client projects; general chatb
 | OCR platform: Document AI vs Gemini | [[Employer-eligibility-screening]] | Different cost and accuracy for every submission |
 | Is multilingual support in scope? | [[Multi-language-support]] | A literal reading ships a bot that misses "dipukul" |
 | KB version: v1.3.0 vs v1.2.0 | [[Ming-Hwee-Agency]] | Module 48 is where conflict resolutions are meant to be recorded |
+| SIP registration window: 3 working days vs 7-day window | [[New-Hiring]] | The bot/staff may register the Settling-In Programme against the wrong deadline |
 | **Resolved:** matching source system | [[Candidate-employer-matching]] | Matching Engine supersedes Manatal |
 
 ## Source summary pages
@@ -110,3 +121,4 @@ It deliberately does NOT cover: other GrowwStacks client projects; general chatb
 - [[minghwee-os-vendor-review-pack-v13-source]] — the current architecture direction
 - [[mom-ea-guidelines-fdw-source]] — MOM conduct guidelines for agencies placing FDWs
 - [[mom-ea-licence-conditions-source]] — the full licence conditions
+- [[services-knowledge-base-source]] — the seven core services: process, documents, forms, fees, MOM touch-points
